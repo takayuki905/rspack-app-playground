@@ -1,9 +1,12 @@
 import { defineConfig } from '@rspack/cli';
 import { rspack, type SwcLoaderOptions } from '@rspack/core';
 
-export default defineConfig({
+export default defineConfig((_env, argv) => ({
   entry: {
     main: './src/index.ts',
+  },
+  optimization: {
+    minimize: argv.mode === 'production',
   },
   target: ['browserslist:last 2 versions, > 0.2%, not dead, Firefox ESR'],
   resolve: {
@@ -37,4 +40,4 @@ export default defineConfig({
       template: './src/index.html',
     }),
   ],
-});
+}));

@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "rspack build",
-    "dev": "rspack dev",
+    "dev": "rspack dev --mode development",
     "preview": "rspack preview"
   },
   "devDependencies": {
